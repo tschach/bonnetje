@@ -1,0 +1,21 @@
+form {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 16px;
+}
+
+.mainContent {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.trackContent {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.editContainer {
+  font-family: 'Courier New', Courier, monospace;
+}
