@@ -23,12 +23,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: ng build
+    - run: npm run build
     # Deploy to local repo
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
         REPO: self
         BRANCH: gh-pages
-        FOLDER: dist
+        FOLDER: dist/bonnetje/browser
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
