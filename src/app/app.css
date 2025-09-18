@@ -2,19 +2,25 @@
 
   --receipt-width: 360px;
 
-  .generator {
-    display: grid;
-    grid-template-columns: auto var(--receipt-width);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 2px;
+  button.form.default {
+    background-color: #ccc;
+    color: #000;
   }
 
-  .editcontainer {
+  .generator {
+    display: grid;
+    grid-template-columns: auto calc(var(--receipt-width) + 8px);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 2px;
+    margin-bottom: 8px;
+  }
+
+  .editarea {
     grid-column-start: 1;
     grid-row-start: 1;
   }
 
-  .previewcontainer {
+  .previewarea {
     grid-column-start: 2;
     grid-row-start: 1;
   }

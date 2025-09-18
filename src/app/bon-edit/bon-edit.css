@@ -19,3 +19,8 @@ form {
 .editContainer {
   font-family: 'Courier New', Courier, monospace;
 }
+
+th {
+  text-align: left;
+  font-weight: bold;
+}

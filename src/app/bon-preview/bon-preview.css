@@ -23,7 +23,6 @@ p {
 }
 
 .receiptContainer {
-
   font-size: calc(var(--receipt-width) / 20);
   width: var(--receipt-width);
   padding: calc(var(--receipt-width) / 10) calc(var(--receipt-width) / 20);
@@ -39,7 +38,18 @@ p {
 
 .receiptContainer.faded {
   color: #000;
-  background-color: #efe8c8;
+  /* background-color: rgba(239, 232, 200, 0.5); */
+  background-color: rgb(247,244,228);
+  box-shadow: 0 0 2rem 0 inset #666
+}
+
+.receiptContainer.faded header {
+  opacity: 50%;
+}
+.receiptContainer.faded main {
+  opacity: 50%;
+}
+.receiptContainer.faded footer {
   opacity: 50%;
 }
 
@@ -50,7 +60,7 @@ p {
 
 
 .receiptContainer header img {
-  width: calc(var(--receipt-width) * 0.66);
+  width: calc(var(--receipt-width) * 0.6);
   margin: 0 auto;
   display: block;
 }
