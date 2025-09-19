@@ -24,7 +24,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run -- build --base-url="https://tschach.github.io/bonnetje/"
+    - run: npm run -- build --base-url https://tschach.github.io/bonnetje/
     # Deploy to local repo
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
