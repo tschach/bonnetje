@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: 'merchantcopy';
   src: url('/merchant-copy.regular.ttf') format('truetype');
@@ -28,6 +26,7 @@ p {
   padding: calc(var(--receipt-width) / 10) calc(var(--receipt-width) / 20);
   text-transform: uppercase;
   font-family: 'hydrogen', 'Anonymous Pro', 'Courier New', Courier, monospace;
+  margin: 1rem auto;
 }
 
 .receiptContainer.crumbled {
@@ -40,7 +39,7 @@ p {
   color: #000;
   /* background-color: rgba(239, 232, 200, 0.5); */
   background-color: rgb(247,244,228);
-  box-shadow: 0 0 2rem 0 inset #666
+  box-shadow: 0 0 3rem 0 inset #cba;
 }
 
 .receiptContainer.faded header {
@@ -94,33 +93,12 @@ p {
 }
 
 table {
-  font-size: 115%;
+  font-size: 110%;
   line-height: 1;
-  font-weight: bold;
-}
-
-.anonymous p,
-.anonymous table,
-.anonymous .date,
-.anonymous .smaller,
-.anonymous .latin {
-  font-size: 1.75rem;
-}
-
-.latin {
-  font-size: 1.9rem;
-}
-.smaller {
-  font-size: 1.45rem;
-}
-
-#login p {
-  font-size: 1.5rem;
-}
-
-table {
+  font-weight: normal;
   border: none;
 }
+
 .total-counts {
   border-top: 2px dotted #666;
 }
@@ -134,87 +112,4 @@ thead {
 td {
   padding: 2px 0;
   vertical-align: top;
-}
-.name {
-  width: 225px;
-  overflow: auto;
-}
-.length {
-  text-align: right;
-}
-.website {
-  margin-bottom: 0px;
-  text-transform: lowercase;
-}
-
-.spotify-logo {
-  margin-top: 20px;
-  width: 80px !important;
-}
-.main-body {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  padding-top: 2vh;
-}
-.receipt-wrapper {
-  width: 50%;
-  justify-content: flex-end;
-  display: flex;
-}
-.customize {
-  min-width: 30%;
-  max-width: 50%;
-  padding-left: 2vw;
-  align-self: stretch;
-}
-.customize > p,
-#explanation p,
-#track-edit p {
-  font-family: Inter, 'Helvetica Neue', sans-serif;
-  line-height: 1.2;
-}
-#track-edit {
-  margin-top: 30px;
-}
-#track-edit div {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  margin-bottom: 5px;
-  border-radius: 10px;
-  align-items: center;
-}
-#track-edit p {
-  margin: 0px;
-}
-#track-edit div:hover {
-  background: #e2e2e2;
-  cursor: pointer;
-}
-.customize-header {
-  font-weight: 700;
-  font-size: 36px;
-  padding-bottom: 1.5vh;
-}
-.explanation-header {
-  padding-top: 2.5vh;
-}
-#type-select-dropdown {
-  width: 100%;
-  padding: 8px 10px;
-  border: 2px solid black;
-  border-radius: 10px;
-  outline: none;
-  font-size: 18px;
-}
-#top-type {
-  margin: 0;
-}
-#options-header,
-#num-header,
-#font-header {
-  margin-top: 20px;
 }

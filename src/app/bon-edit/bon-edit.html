@@ -11,9 +11,9 @@
       <div><label for="artistclaim" class="form">Additional text</label><input type="text" class="form" id="artistclaim" [(ngModel)]="receipt.artist.claim" name="artistclaim" /></div>
       <div style="display: flex; flex-direction: row">
         <div style="flex-basis: 50%">
-          <div><label class="form">Receipt style</label></div>
-          <div><input type="radio" value="PLAIN" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" /><label class="form">plain</label></div>
+          <div><label class="form">Paper style</label></div>
           <div><input type="radio" value="CRUMPLED" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" /><label class="form">crumpled</label></div>
+          <div><input type="radio" value="PLAIN" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" /><label class="form">plain</label></div>
           <div><input type="radio" value="FADED" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" /><label class="form">faded</label></div>
         </div>
         <div style="flex-basis: 50%">
@@ -23,6 +23,7 @@
         </div>
       </div>
     </div>
+    <hr/>
     <div class="trackContent">
       <table class="tracks">
         <colgroup>
@@ -42,6 +43,7 @@
       </table>
       <div style="text-align: right"><button (click)="newTrack()" class="form">Add track</button><button (click)="deleteTrack()" class="form">Delete last track</button></div>
     </div>
+    <hr/>
   </form>
   <div [hidden]="true">{{ receipt | json}} </div>
 </div>

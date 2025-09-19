@@ -1,15 +1,19 @@
-<header>
-  <h1>🎶 + 📃 = bonnetje</h1>
-  <p>create receipts from your favourite songs and albums</p>
-  <div style="display: flex; flex-direction: row;justify-content: space-between;">
+<header class="pageHeader" id="top">
+  <h1>bonnetje</h1>
+  <p class="muted"><span>☝️</span> it's a Dutch word for receipt</p>
+  <p>turn your favourite albums into receipts  (very beta version)</p>
+  <hr/>
+  <div class="headerLinks">
     <div>
-      <button (click)="loadExample('TOOL')" class="form default">load "Tool" example</button>
-      <button (click)="loadExample('STRAYKIDS')" class="form default">load "Stray Kids" example</button>
-      <button (click)="loadExample('TRIBE')" class="form default">load "A Tribe Called Quest" example</button>
+      <p class="exampleHeading">Try these examples:</p>
+      <button (click)="loadExample('STRAYKIDS')" class="form default">Stray Kids</button>
+      <button (click)="loadExample('GAGA')" class="form default">Lady Gaga</button>
+      <button (click)="loadExample('SOAD')" class="form default">S.O.A.D.</button>
     </div>
     <div>
       <button (click)="clearReceipt()" class="form default">clear receipt form</button>
       <button (click)="downloadReceipt()" class="form">download receipt image</button>
+      <a href="#TheReceipt" class="form">👇 see result</a>
     </div>
   </div>
 </header>
@@ -23,6 +27,12 @@
       <app-bon-preview [receipt]="receipt" [labels]="labels"></app-bon-preview>
     </div>
   </div>
+  <div class="bottomDownload">
+    <button (click)="downloadReceipt()" class="form">download receipt image</button>
+    <a href="#top" class="form">☝️ to the top</a>
+  </div>
 </main>
 
-<footer></footer>
+<footer>
+  <p>Made with ❤️ by <a href="https://mastodon.social/@tschach">@tschach</a>. Apparently heavily inspired by the awesome work of <a href="https://www.instagram.com/albumreceipts/">Melody Han You</a> and <a href="https://receiptify.herokuapp.com/">Michelle Liu</a>.</p>
+</footer>

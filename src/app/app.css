@@ -1,5 +1,4 @@
 :root {
-
   --receipt-width: 360px;
 
   button.form.default {
@@ -7,42 +6,127 @@
     color: #000;
   }
 
+  a.form,
+  button.form {
+    transition: none;
+    font-weight: normal;
+    line-height: 1;
+  }
+
+  label.form {
+    display: inline-block;
+    margin-bottom: 1px;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
   .generator {
-    display: grid;
-    grid-template-columns: auto calc(var(--receipt-width) + 8px);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 2px;
-    margin-bottom: 8px;
+    display: block;
+    margin: 0;
   }
 
-  .editarea {
-    grid-column-start: 1;
-    grid-row-start: 1;
+  .headerLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .previewarea {
-    grid-column-start: 2;
-    grid-row-start: 1;
-  }
+  
 
   app-root > header {
     text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    background-color: #f8f8f8;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #f0f0f4;
+    color: #222233;
   }
 
   header h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bolder;
   }
 
   header p {
-    font-size: 1.5rem;
+    font-size: 1rem;
+  }
+
+  header p.muted {
+    font-size: .9rem;
+    color: #777788;
+    font-style: italic;
+  }
+
+  header p.muted span {
+    font-style: normal;
   }
 
   main h2 {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .bottomDownload {
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #f0f0f4;
+    color: #222233;
+  }
+
+  @media (min-width: 1024px) {
+    app-root > header {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .generator {
+      display: grid;
+      grid-template-columns: auto calc(var(--receipt-width) + 8px);
+      grid-template-rows: repeat(1, 1fr);
+      gap: 2px;
+      margin-bottom: 8px;
+    }
+
+    .editarea {
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+
+    .previewarea {
+      grid-column-start: 2;
+      grid-row-start: 1;
+    }
+
+    .headerLinks {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .headerLinks a {
+      display: none;
+    }
+
+    .exampleHeading {
+    display: inline-block;
+    }
+
+    hr {
+      display: none;
+    }
+
+    .bottomDownload {
+      display: none;
+    }
+
+    footer {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
   }
 }

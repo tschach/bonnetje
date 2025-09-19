@@ -1,19 +1,18 @@
 form {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  gap: 16px;
+  margin: 1rem;
+  display: block;
 }
 
 .mainContent {
   grid-column-start: 1;
   grid-row-start: 1;
+  overflow: hidden;
 }
 
 .trackContent {
-  grid-column-start: 2;
-  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  overflow: hidden;
 }
 
 .editContainer {
@@ -23,4 +22,27 @@ form {
 th {
   text-align: left;
   font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 16px;
+  }
+
+  .mainContent {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    overflow: hidden;
+  }
+
+  .trackContent {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    overflow: hidden;
+  }
+
+  
 }

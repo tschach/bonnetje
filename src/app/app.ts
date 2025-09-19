@@ -28,7 +28,13 @@ export class App {
   protected emptyReceipt: Receipt = {
     meta: { date: '', cardnumber: '', cardholder: '', issuer: '', style: 'PLAIN' },
     artist: { name: '', logo: '', logodata: '', claim: '' },
-    songlist: { title: '', showHeader: false, showQuantity: true, total: '', tracks: [{ title: '', length: '', order: 1 }] },
+    songlist: {
+      title: '',
+      showHeader: false,
+      showQuantity: true,
+      total: '',
+      tracks: [{ title: '', length: '', order: 1 }],
+    },
   };
 
   public receipt: Receipt = JSON.parse(JSON.stringify(this.emptyReceipt));
@@ -149,6 +155,81 @@ export class App {
         },
       },
     },
+    {
+      SOAD: {
+        meta: {
+          date: 'September 4, 2001',
+          cardnumber: '1994-2006-2010-xxxx',
+          cardholder: 'S.O.A.D.',
+          issuer: 'American / Columbia',
+          style: 'FADED',
+        },
+        artist: {
+          name: '',
+          logo: 'SOAD.png',
+          logodata:
+            'data:image/png;base64,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',
+          claim: 'Revolution, the only solution',
+        },
+        songlist: {
+          title: 'Toxicity',
+          showHeader: true,
+          showQuantity: true,
+          total: '43:55',
+          tracks: [
+            { title: 'Prison Song', length: '3:21', order: 1 },
+            { title: 'Needles', length: '3:13', order: 2 },
+            { title: 'Deer Dance', length: '2:54', order: 3 },
+            { title: 'Jet Pilot', length: '2:06', order: 4 },
+            { title: 'X', length: '1:58', order: 5 },
+            { title: 'Chop Suey!', length: '3:30', order: 6 },
+            { title: 'Bounce', length: '1:54', order: 7 },
+            { title: 'Forest', length: '4:00', order: 8 },
+            { title: 'ATWA', length: '2:56', order: 9 },
+            { title: 'Science', length: '2:42', order: 10 },
+            { title: 'Shimmy', length: '1:50', order: 11 },
+            { title: 'Toxicity', length: '3:38', order: 12 },
+            { title: 'Psycho', length: '3:45', order: 13 },
+            { title: 'Aerials', length: '3:55', order: 14 },
+            { title: 'Arto', length: '2:13', order: 15 },
+          ],
+        },
+      },
+    },
+    {
+      GAGA: {
+        meta: {
+          date: '7 March 2025',
+          cardnumber: '00-6024-7545-1075',
+          cardholder: 'Stefani Germanotta',
+          issuer: 'Interscope',
+          style: 'PLAIN',
+        },
+        artist: { name: 'Lady Gaga', logo: '', logodata: '', claim: 'Born This Way' },
+        songlist: {
+          title: 'Mayhem',
+          showHeader: false,
+          showQuantity: false,
+          total: '53:04',
+          tracks: [
+            { title: 'Disease', length: '3:49', order: 1 },
+            { title: 'Abracadabra', length: '3:43', order: 2 },
+            { title: 'Garden of Eden', length: '3:59', order: 3 },
+            { title: 'Perfect Celebrity', length: '3:49', order: 4 },
+            { title: 'Vanish into You', length: '4:04', order: 5 },
+            { title: 'Killah', length: '3:30', order: 6 },
+            { title: 'Zombieboy', length: '3:33', order: 7 },
+            { title: 'LoveDrug', length: '3:13', order: 8 },
+            { title: 'How Bad Do U Want Me', length: '3:58', order: 9 },
+            { title: "Don't Call Tonight", length: '3:45', order: 10 },
+            { title: 'Shadow of a Man', length: '3:19', order: 11 },
+            { title: 'The Beast', length: '3:54', order: 12 },
+            { title: 'Blade of Grass', length: '4:17', order: 13 },
+            { title: 'Die with a Smile', length: '4:11', order: 14 },
+          ],
+        },
+      },
+    },
   ];
 
   ngOnInit() {}
@@ -160,17 +241,17 @@ export class App {
   loadExample(example: string) {
     this.exampleReceipts.forEach((receipt) => {
       if (Object.keys(receipt)[0] === example) {
-        this.receipt = Object.values(receipt)[0];
+        this.receipt = JSON.parse(JSON.stringify(Object.values(receipt)[0]));
       }
     });
   }
 
   downloadReceipt() {
     let imageName =
-      (this.receipt.artist.name ? this.receipt.artist.name.replace(/\s/g, "-") + '-' : '') +
-      (this.receipt.songlist.title ? this.receipt.songlist.title.replace(/\s/g, "-") + '-' : '') +
+      (this.receipt.artist.name ? this.receipt.artist.name.replace(/\s/g, '-') + '-' : '') +
+      (this.receipt.songlist.title ? this.receipt.songlist.title.replace(/\s/g, '-') + '-' : '') +
       'bonnetje-' +
-      new Date().toJSON().slice(0,10) +
+      (new Date().toJSON().slice(0, -5)).replace('T', '-').replaceAll(':', '') +
       '.png';
     DomToImage.toBlob(document.getElementById('TheReceipt')).then(function (blob: any) {
       SaveAs(blob, imageName);
