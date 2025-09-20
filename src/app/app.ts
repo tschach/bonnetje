@@ -257,6 +257,42 @@ export class App {
       SaveAs(blob, imageName);
     });
   }
+
+  exportData() {
+    let imageName =
+    'bonnetje-export-' +
+    (this.receipt.artist.name ? this.receipt.artist.name.replace(/\s/g, '-') + '-' : '') +
+      (this.receipt.songlist.title ? this.receipt.songlist.title.replace(/\s/g, '-') + '-' : '') +
+      (new Date().toJSON().slice(0, -5)).replace('T', '-').replaceAll(':', '') +
+      '.txt';
+    var blob = new Blob([JSON.stringify(this.receipt)], {type: "text/plain;charset=utf-8"});
+    SaveAs.saveAs(blob, imageName);
+  }
+
+  importData(event: any) {
+    var file = event.target.files[0];
+    this.readFileContent(file).then(
+      (result) => {
+        this.receipt = JSON.parse(result)
+      }
+    );
+
+  }
+
+  readFileContent(file: File): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+        if (!file) {
+            resolve('');
+        }
+        const reader = new FileReader();
+        reader.onloadend = function() {
+          if (reader.result !== null) {
+            resolve(<string>reader.result);
+          }
+        };
+        reader.readAsText(file);
+    });
+}
 }
 
 export interface Artist {

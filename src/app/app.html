@@ -1,8 +1,8 @@
 <header class="pageHeader" id="top">
   <h1>bonnetje</h1>
   <p class="muted"><span>☝️</span> it's a Dutch word for receipt</p>
-  <p>turn your favourite albums into receipts  (very beta version)</p>
-  <hr/>
+  <p>turn your favourite albums into receipts (very beta version)</p>
+  <hr />
   <div class="headerLinks">
     <div>
       <p class="exampleHeading">Try these examples:</p>
@@ -13,6 +13,11 @@
     <div>
       <button (click)="clearReceipt()" class="form default">clear receipt form</button>
       <button (click)="downloadReceipt()" class="form">download receipt image</button>
+      <button (click)="exportData()" class="form">export data</button>
+      <label class="custom-file-upload">
+        <input type="file" (change)="importData($event)" hidden/>
+        import data
+      </label>
       <a href="#TheReceipt" class="form">👇 see result</a>
     </div>
   </div>

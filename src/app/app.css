@@ -31,7 +31,40 @@
     justify-content: space-between;
   }
 
+  .custom-file-upload {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.125rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3490dc;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    transition: all 0.2s ease;
+    font-weight: 600;
 
+    margin-left: .5rem;
+    transition: none;
+  font-weight: normal;
+  line-height: 1;
+  }
+
+  .custom-file-upload + .form {
+    margin-left: .5rem;
+  }
 
   app-root > header {
     text-align: center;
@@ -51,7 +84,7 @@
   }
 
   header p.muted {
-    font-size: .9rem;
+    font-size: 0.9rem;
     color: #777788;
     font-style: italic;
   }
