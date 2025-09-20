@@ -37,7 +37,7 @@ export class App {
     },
   };
 
-  public receipt: Receipt = JSON.parse(JSON.stringify(this.emptyReceipt));
+  public receipt: Receipt = JSON.parse(localStorage.getItem('bonnetjeAutoSave') || JSON.stringify(this.emptyReceipt));
 
   public exampleReceipts = [
     {

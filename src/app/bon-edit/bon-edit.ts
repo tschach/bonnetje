@@ -19,6 +19,10 @@ export class BonEdit {
   };
   @Input() labels: Labels | undefined;
 
+  ngDoCheck() {
+    localStorage.setItem('bonnetjeAutoSave', JSON.stringify(this.receipt));
+  }
+
   newTrack() {
     let tracks: number = this.receipt.songlist.tracks.length + 1;
     this.receipt.songlist.tracks.push({ title: '', length: '', order: tracks });
