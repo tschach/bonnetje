@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "gh-deploy": "ng build && gh-pages -d dist",
+    "build": "ng build --base-href http://127.0.0.1:8080/bonnetje/browser/",
+    "build-ghpages": "ng build --base-href /bonnetje/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
