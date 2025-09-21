@@ -6,6 +6,18 @@
     color: #000;
   }
 
+  .topnote {
+    padding: 0.25rem 1rem;
+    text-align: center;
+    background-color: #b6b6c9;
+    color: #000;
+  }
+
+  .topnote a {
+    text-decoration: underline;
+    color: #363649;
+  }
+
   a.form,
   button.form {
     transition: none;
@@ -49,27 +61,26 @@
     margin-bottom: 0.5rem;
     line-height: 1.25;
     cursor: pointer;
-    color: #fff;
-    background-color: #3490dc;
+    background-color: #ccc;
+    color: #000;
     -webkit-transform: scale(1);
     transform: scale(1);
     transition: all 0.2s ease;
     font-weight: 600;
 
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     transition: none;
-  font-weight: normal;
-  line-height: 1;
+    font-weight: normal;
+    line-height: 1;
   }
 
   .custom-file-upload + .form {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   app-root > header {
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0.5rem;
     background-color: #f0f0f4;
     color: #222233;
   }
@@ -102,26 +113,44 @@
     text-align: center;
   }
 
+  .helpSection {
+    padding: 1rem 0.5rem;
+    background-color: #b6b6c9;
+    color: #000;
+  }
+
+  .helpSection mark {
+    color: #000;
+    background-color: #f0f0f4;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 0.7), 0 2px 0 0 rgb(255 255 255 / 1) inset;
+    padding: .1rem .25rem;
+  }
+
+  .helpSection h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;;
+  }
+
   app-root > footer {
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0.5rem;
     background-color: #f0f0f4;
     color: #222233;
   }
 
   @media (min-width: 1024px) {
     app-root > header {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding: 2rem 0.5rem;
     }
 
     .generator {
       display: grid;
-      grid-template-columns: auto calc(var(--receipt-width) + 8px);
+      grid-template-columns: auto calc(var(--receipt-width) + 1rem);
       grid-template-rows: repeat(1, 1fr);
-      gap: 2px;
-      margin-bottom: 8px;
+      gap: 0;
     }
 
     .editarea {
@@ -145,7 +174,7 @@
     }
 
     .exampleHeading {
-    display: inline-block;
+      display: inline-block;
     }
 
     hr {
@@ -157,9 +186,7 @@
     }
 
     app-root > footer {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding: 2rem 0.5rem;
     }
-
   }
 }

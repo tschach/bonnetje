@@ -1,3 +1,6 @@
+<div class="topnote">
+  New here? Have a look at the <a href="#help">help section</a>.
+</div>
 <header class="pageHeader" id="top">
   <h1>bonnetje</h1>
   <p class="muted"><span>☝️</span> it's a Dutch word for receipt</p>
@@ -11,14 +14,14 @@
       <button (click)="loadExample('SOAD')" class="form default">S.O.A.D.</button>
     </div>
     <div>
-      <button (click)="clearReceipt()" class="form default">clear receipt form</button>
-      <button (click)="downloadReceipt()" class="form">download receipt image</button>
-      <button (click)="exportData()" class="form">export data</button>
+      <button (click)="clearReceipt()" class="form default">clear form</button>
+      <button (click)="exportData()" class="form default">save data</button>
       <label class="custom-file-upload">
-        <input type="file" (change)="importData($event)" hidden/>
-        import data
+        <input type="file" (change)="importData($event)" hidden />
+        load data
       </label>
-      <a href="#TheReceipt" class="form">👇 see result</a>
+      <button (click)="downloadReceipt()" class="form">download image</button>
+      <a href="#TheReceipt" class="form default">👇 see receipt</a>
     </div>
   </div>
 </header>
@@ -33,10 +36,26 @@
     </div>
   </div>
   <div class="bottomDownload">
-    <button (click)="downloadReceipt()" class="form">download receipt image</button>
-    <a href="#top" class="form">☝️ to the top</a>
+    <button (click)="exportData()" class="form default">save data</button>
+    <label class="custom-file-upload">
+      <input type="file" (change)="importData($event)" hidden />
+      load data
+    </label>
+    <button (click)="downloadReceipt()" class="form">download receipt</button>
+    <a href="#top" class="form default">☝️ to the top</a>
   </div>
 </main>
+
+<aside class="helpSection" id="help">
+  <h2>Help and info</h2>
+  <div>
+    <p>The receipt is updated in real-time with your inputs.</p>
+    <p>With <mark>save data</mark> and <mark>load data</mark> you can save the current state of the form (including the image) to your computer or device and restore it later.</p>
+    <p>All input fields are optional (except for those in the tracklist). If you leave them empty, they will not appear on the receipt.</p>
+    <p>Use <mark>download image</mark> to save the receipt image. You can not save it by right-clicking on or long-touching the image in the browser.</p>
+  </div>
+</aside>
+
 
 <footer>
   <p>Made with ❤️ by <a href="https://mastodon.social/@tschach">@tschach</a>. Evidently inspired by and building upon the awesome work of <a href="https://www.instagram.com/albumreceipts/">Melody Han You</a> and <a href="https://receiptify.herokuapp.com/">Michelle Liu</a>.</p>
