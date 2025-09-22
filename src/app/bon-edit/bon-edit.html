@@ -1,14 +1,39 @@
 <div class="editContainer">
   <form>
     <div class="mainContent">
+      <div>
+        <div><label class="form">Receipt mode</label></div>
+        <div style="display: flex; flex-direction: row">
+          <div style="flex-basis: 50%"><input type="radio" value="ALBUM" [(ngModel)]="receipt.mode" name="receiptmode" class="form" /><label class="form">album-focused</label></div>
+          <div style="flex-basis: 50%"><input type="radio" value="CONCERT" [(ngModel)]="receipt.mode" name="receiptmode" class="form" /><label class="form">concert-focused</label></div>
+        </div>
+      </div>
+      @if (receipt.mode === 'ALBUM') {
       <div class="form-group"><label for="albumtitle" class="form">Title</label><input type="text" class="form" id="albumtitle" [(ngModel)]="receipt.songlist.title" name="albumtitle" /></div>
+      }
+      @if (receipt.mode === 'CONCERT') {
+      <div class="form-group"><label for="concerttour" class="form">Tour</label><input type="text" class="form" id="concerttour" [(ngModel)]="receipt.concert.tour" name="concerttour" /></div>
+      <div class="form-group"><label for="concertcity" class="form">City</label><input type="text" class="form" id="concertcity" [(ngModel)]="receipt.concert.city" name="concertcity" /></div>
+      <div class="form-group"><label for="concertcountry" class="form">Country</label><input type="text" class="form" id="concertcountry" [(ngModel)]="receipt.concert.country" name="concertcountry" /></div>
+      <div class="form-group"><label for="concertvenue" class="form">Venue</label><input type="text" class="form" id="concertvenue" [(ngModel)]="receipt.concert.venue" name="concertvenue" /></div>
+      <div class="form-group"><label for="concertfestival" class="form">Festival</label><input type="text" class="form" id="concertfestival" [(ngModel)]="receipt.concert.festival" name="concertfestival" /></div>
+      }
       <div class="form-group"><label for="artistname" class="form">Artist</label><input type="text" class="form" id="artistname" [(ngModel)]="receipt.artist.name" name="artistname" /></div>
       <div class="form-group"><label for="logo" class="form">Logo image</label><input type="file" class="form" id="artistlogo" [(ngModel)]="receipt.artist.logo" name="artistlogo" (change)="logoToBase64($event)" /></div>
       <div><label for="metadate" class="form">Date</label><input type="text" class="form" id="metadate" [(ngModel)]="receipt.meta.date" name="metadate" /></div>
       <div><label for="cardnumber" class="form">Credit card</label><input type="text" class="form" id="cardnumber" [(ngModel)]="receipt.meta.cardnumber" name="cardnumber" /></div>
       <div><label for="cardholder" class="form">Credit card holder</label><input type="text" class="form" id="cardholder" [(ngModel)]="receipt.meta.cardholder" name="cardholder" /></div>
       <div><label for="issuer" class="form">Credit card issuer</label><input type="text" class="form" id="issuer" [(ngModel)]="receipt.meta.issuer" name="issuer" /></div>
-      <div><label for="artistclaim" class="form">Additional text</label><input type="text" class="form" id="artistclaim" [(ngModel)]="receipt.artist.claim" name="artistclaim" /></div>
+      <div>
+        <label for="metatext" class="form">Additional text (above barcode)</label>
+        <input type="text" class="form" id="metatext" [(ngModel)]="receipt.meta.text" name="metatext" />
+        <input type="text" class="form" id="metatext2" [(ngModel)]="receipt.meta.text2" name="metatext2" />
+      </div>
+      <div>
+        <label for="artistclaim" class="form">Additional text (below barcode)</label>
+        <input type="text" class="form" id="artistclaim" [(ngModel)]="receipt.artist.claim" name="artistclaim" />
+        <input type="text" class="form" id="artistclaim2" [(ngModel)]="receipt.artist.claim2" name="artistclaim2" />
+      </div>
       <div style="display: flex; flex-direction: row">
         <div style="flex-basis: 50%">
           <div><label class="form">Paper style</label></div>
@@ -23,7 +48,7 @@
         </div>
       </div>
     </div>
-    <hr/>
+    <hr />
     <div class="trackContent">
       <table class="tracks">
         <colgroup>
@@ -41,9 +66,9 @@
           <td style="vertical-align: middle; padding: 0.5rem 0 0 0.5rem"><input type="text" class="form" id="tracklength{{ $index}}" [(ngModel)]="track.length" name="tracklength{{ $index}}" style="width: 5rem" /></td>
         </tr>}
       </table>
-      <div style="text-align: right"><button (click)="newTrack()" class="form">Add track</button><button (click)="deleteTrack()" class="form">Delete last track</button></div>
+      <div style="text-align: right"><button (click)="newTrack()" class="form default">Add track</button><button (click)="deleteTrack()" class="form default">Delete last track</button></div>
     </div>
-    <hr/>
+    <hr />
   </form>
   <div [hidden]="true">{{ receipt | json}} </div>
 </div>

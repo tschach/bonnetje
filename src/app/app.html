@@ -4,7 +4,7 @@
 <header class="pageHeader" id="top">
   <h1>bonnetje</h1>
   <p class="muted"><span>☝️</span> it's a Dutch word for receipt</p>
-  <p>turn your favourite albums into receipts (very beta version)</p>
+  <p>turn your favourite album or tracklist into a receipt</p>
   <hr />
   <div class="headerLinks">
     <div>
@@ -12,6 +12,7 @@
       <button (click)="loadExample('STRAYKIDS')" class="form default">Stray Kids</button>
       <button (click)="loadExample('GAGA')" class="form default">Lady Gaga</button>
       <button (click)="loadExample('SOAD')" class="form default">S.O.A.D.</button>
+      <button (click)="loadExample('FATM')" class="form default">Florence (concert)</button>
     </div>
     <div>
       <button (click)="clearReceipt()" class="form default">clear form</button>
@@ -47,16 +48,30 @@
 </main>
 
 <aside class="helpSection" id="help">
-  <h2>Help and info</h2>
   <div>
-    <p>The receipt is updated in real-time with your inputs.</p>
+    <h2>What is <em>bonnetje</em>?</h2>
+    <p><em>bonnetje</em> is a free & open source web application for creating a receipt image from an album by your favourite artist or band.</p>
+    <p>The idea for this was made popular by <a href="https://www.instagram.com/albumreceipts/">@albumreceipts</a> some years ago.</p>
+    <p>With <em>bonnetje</em> you have control over the look and content of the receipt. You can also create a <em>concert receipt</em> and turn it into a memorable fan freebie.</p>
+    <p>The images created with <em>bonnetje</em> are free to use for any purpose. No need to ask for permission.</p>
+  </div>
+  <div>
+    <h2>How to use it</h2>
+    <p>You can load the examples at the top to learn how it works.</p>
+    <p>The receipt preview image is updated in real-time with your inputs.</p>
     <p>With <mark>save data</mark> and <mark>load data</mark> you can save the current state of the form (including the image) to your computer or device and restore it later.</p>
-    <p>All input fields are optional (except for those in the tracklist). If you leave them empty, they will not appear on the receipt.</p>
-    <p>Use <mark>download image</mark> to save the receipt image. You can not save it by right-clicking on or long-touching the image in the browser.</p>
+    <p>All input fields are optional (except for the tracklist). If you leave them empty, they will not appear on the receipt.</p>
+    <p>Use <mark>download image</mark> to save the receipt image. You can not save it by right-clicking on the image in the browser or long-touching it on a phone.</p>
+  </div>
+  <div>
+    <h2>Who made it?</h2>
+    <p>Made with ❤️ by <a href="https://mastodon.social/@tschach">@tschach</a>. Evidently inspired by and building upon the awesome work of <a href="https://www.instagram.com/albumreceipts/">Melody Han You</a> and <a href="https://receiptify.herokuapp.com/">Michelle Liu</a>.</p>
+    <p><em>bonnetje</em> respects your privacy. It does not store any cookies on your device and makes use of a <a href="https://www.goatcounter.com/">privacy-friendly analytics software</a> that does not track any personal data.</p>
+    <p><a href="https://github.com/tschach/bonnetje">Source code of <em>bonnetje</em></a>.</p>
   </div>
 </aside>
 
 
 <footer>
-  <p>Made with ❤️ by <a href="https://mastodon.social/@tschach">@tschach</a>. Evidently inspired by and building upon the awesome work of <a href="https://www.instagram.com/albumreceipts/">Melody Han You</a> and <a href="https://receiptify.herokuapp.com/">Michelle Liu</a>.</p>
+  <p></p>
 </footer>

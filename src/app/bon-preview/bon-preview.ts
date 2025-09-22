@@ -9,8 +9,10 @@ import { Receipt, Labels } from './../app';
 })
 export class BonPreview {
   @Input() receipt: Receipt = {
-    meta: { date: '', cardnumber: '', cardholder: '', issuer: '', style: '' },
-    artist: { name: '', logo: '', logodata:'', claim: '' },
+    mode: '',
+    meta: { date: '', cardnumber: '', cardholder: '', issuer: '', style: '', text: '', text2: '' },
+    artist: { name: '', logo: '', logodata:'', claim: '', claim2: ''  },
+    concert: { city: '', country: '', venue: '', festival: '', tour: '' },
     songlist: { title: '', showHeader: true, showQuantity: true, total: '', tracks: [] },
   };
   @Input() labels: Labels | undefined;

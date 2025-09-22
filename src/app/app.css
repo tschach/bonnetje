@@ -1,8 +1,20 @@
 :root {
   --receipt-width: 360px;
 
-  button.form.default {
-    background-color: #ccc;
+  em {
+    font-style: italic;
+  }
+
+  button.form,
+  a.form {
+    color: #000;
+    background-color: #b6b6c9;
+    box-shadow: 1px 1px 0 hsl(240, 15%, 25%);
+  }
+
+  button.form.default,
+  a.form.default {
+    background-color: #d3d3de;
     color: #000;
   }
 
@@ -61,17 +73,18 @@
     margin-bottom: 0.5rem;
     line-height: 1.25;
     cursor: pointer;
-    background-color: #ccc;
-    color: #000;
     -webkit-transform: scale(1);
     transform: scale(1);
     transition: all 0.2s ease;
     font-weight: 600;
-
     margin-left: 0.5rem;
     transition: none;
     font-weight: normal;
     line-height: 1;
+
+    color: #000;
+    background-color: #d3d3de;
+    box-shadow: 1px 1px 0 hsl(240, 15%, 25%);
   }
 
   .custom-file-upload + .form {
@@ -114,24 +127,29 @@
   }
 
   .helpSection {
-    padding: 1rem 0.5rem;
+    padding: 1rem;
     background-color: #b6b6c9;
     color: #000;
   }
 
   .helpSection mark {
     color: #000;
-    background-color: #f0f0f4;
+    background-color: #d3d3de;
     border-radius: 3px;
-    border: 1px solid #b4b4b4;
+    border: 1px solid hsl(240, 14%, 65%);
     box-shadow: 0 1px 1px rgb(0 0 0 / 0.7), 0 2px 0 0 rgb(255 255 255 / 1) inset;
-    padding: .1rem .25rem;
+    padding: .1rem .25rem 0 .25rem;
   }
 
   .helpSection h2 {
     font-size: 1.5rem;
     line-height: 2rem;
-    margin-bottom: 0.5rem;;
+    margin-bottom: 0.5rem;
+  }
+
+  .helpSection a {
+    text-decoration: underline;
+    color: #363649;
   }
 
   app-root > footer {
@@ -183,6 +201,14 @@
 
     .bottomDownload {
       display: none;
+    }
+
+    .helpSection {
+      padding: 1rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      gap: 4rem;
     }
 
     app-root > footer {
