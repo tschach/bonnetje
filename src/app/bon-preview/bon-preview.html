@@ -1,4 +1,5 @@
-<div class="receiptContainer {{ styleCssClass }}" id="TheReceipt">
+<div class="receiptContainer">
+<div id="TheReceipt" class="{{ styleCssClass }}">
   @if (receipt.mode === 'ALBUM') {
   <header>
     @if (receipt.artist.logodata) { <img src="{{ receipt.artist.logodata }}" /> } @if
@@ -128,4 +129,5 @@
       }
     </div>
   </footer>
+</div>
 </div>
