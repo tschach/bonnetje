@@ -22,7 +22,7 @@ p {
 
 .receiptContainer {
   width: var(--receipt-width);
-  margin: 1rem auto;
+  margin: 1rem;
 }
 
 #TheReceipt.crumbled {
