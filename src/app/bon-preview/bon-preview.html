@@ -1,133 +1,141 @@
 <div class="receiptContainer">
-<div id="TheReceipt" class="{{ styleCssClass }}">
-  @if (receipt.mode === 'ALBUM') {
-  <header>
-    @if (receipt.artist.logodata) { <img src="{{ receipt.artist.logodata }}" /> } @if
-    (receipt.songlist.title) {
-    <h2>{{ receipt.songlist.title }}</h2>
-    } @if (receipt.artist.name) {
-    <h3>{{ receipt.artist.name }}</h3>
-    }
-  </header>
-  }
-  @if (receipt.mode === 'CONCERT') {
-  <header>
-    @if (receipt.artist.logodata) { <img src="{{ receipt.artist.logodata }}" /> }
-    @if (receipt.artist.name) {
+  <div id="TheReceipt" class="{{ styleCssClass }}">
+    @if (receipt.mode === 'ALBUM') {
+    <header>
+      @if (receipt.artist.logodata) { <img src="{{ receipt.artist.logodata }}" /> } @if
+      (receipt.songlist.title) {
+      <h2>{{ receipt.songlist.title }}</h2>
+      } @if (receipt.artist.name) {
       <h3>{{ receipt.artist.name }}</h3>
       }
-      @if (receipt.concert.tour) {
-    <h2>{{ receipt.concert.tour }}</h2>
+    </header>
     }
-    @if (receipt.concert.city) {
+    @if (receipt.mode === 'CONCERT') {
+    <header>
+      @if (receipt.artist.logodata) { <img src="{{ receipt.artist.logodata }}" /> }
+      @if (receipt.artist.name) {
+      <h3>{{ receipt.artist.name }}</h3>
+      }
+      @if (receipt.concert.festival && receipt.concert.tour) {
+        <h2 style="font-weight: normal;font-size: 133%;">{{ receipt.concert.tour }}</h2>
+        <h2>{{ receipt.concert.festival }}</h2>
+      } @else {
+      @if (receipt.concert.tour) {
+      <h2>{{ receipt.concert.tour }}</h2>
+      }
+      @if (receipt.concert.festival ) {
+      <h2>{{ receipt.concert.festival }}</h2>
+      }
+      }
+      @if (receipt.concert.city) {
       <p>{{ receipt.concert.city }}@if (receipt.concert.country) {, {{ receipt.concert.country }}}</p>
       }
-  </header>
-  }
-  <main>
-    @if (receipt.mode === 'CONCERT') {
-    @if (receipt.meta.date) {
-    <div style="display:flex;flex-direction: row;justify-content: space-between;">
-      <div>{{ labels?.date }}</div>
-      <div> {{ receipt.meta.date }} </div>
-    </div>
+    </header>
     }
-    @if (receipt.concert.venue) {
-    <div style="display:flex;flex-direction: row;justify-content: space-between;">
-      <div>{{ labels?.venue }}</div>
-      <div> {{ receipt.concert.venue }} </div>
-    </div>
-    }
-    }
-    <table class="tracks">
-      <colgroup>
-        @if (receipt.songlist.showQuantity) {
-        <col />
-        }
-        <col width="100%" />
-        <col />
-      </colgroup>
-      @if (receipt.songlist.showHeader) {
-      <thead>
-        @if (receipt.songlist.showQuantity) {
-        <td style="text-align: right; padding-right: 20px; padding-left: 4px">
-          {{ labels?.tracknumber }}
-        </td>
-        <td>{{ labels?.tracktitle }}</td>
-        } @else {
-        <td style="padding-left: 4px">{{ labels?.tracktitle }}</td>
-        }
-        <td style="text-align: right; padding-right: 4px">{{ labels?.tracklength }}</td>
-      </thead>
-      } @for (track of receipt.songlist.tracks; track track.order) {
-      <tr>
-        @if (receipt.songlist.showQuantity) {
-        <td style="text-align: right; padding-right: 20px; padding-left: 4px">{{ track.order }}</td>
-        <td>{{ track.title }}</td>
-        } @else {
-        <td style="padding-left: 4px">{{ track.title }}</td>
-        }
-        <td style="text-align: right; padding-right: 4px">{{ track.length }}</td>
-      </tr>
+    <main>
+      @if (receipt.mode === 'CONCERT') {
+      @if (receipt.meta.date) {
+      <div style="display:flex;flex-direction: row;justify-content: space-between;">
+        <div>{{ labels?.date }}</div>
+        <div> {{ receipt.meta.date }} </div>
+      </div>
       }
-      <tr class="total-counts">
-        @if (receipt.songlist.showQuantity) {
-        <td style="padding-left: 4px" class="begin" colspan="2">{{ labels?.itemcount }}</td>
-        } @if (!receipt.songlist.showQuantity) {
-        <td style="padding-left: 4px" class="begin">{{ labels?.itemcount }}</td>
+      @if (receipt.concert.venue) {
+      <div style="display:flex;flex-direction: row;justify-content: space-between;">
+        <div>{{ labels?.venue }}</div>
+        <div> {{ receipt.concert.venue }} </div>
+      </div>
+      }
+      }
+      <table class="tracks">
+        <colgroup>
+          @if (receipt.songlist.showQuantity) {
+          <col />
+          }
+          <col width="100%" />
+          <col />
+        </colgroup>
+        @if (receipt.songlist.showHeader) {
+        <thead>
+          @if (receipt.songlist.showQuantity) {
+          <td style="text-align: right; padding-right: 20px; padding-left: 4px">
+            {{ labels?.tracknumber }}
+          </td>
+          <td>{{ labels?.tracktitle }}</td>
+          } @else {
+          <td style="padding-left: 4px">{{ labels?.tracktitle }}</td>
+          }
+          <td style="text-align: right; padding-right: 4px">{{ labels?.tracklength }}</td>
+        </thead>
+        } @for (track of receipt.songlist.tracks; track track.order) {
+        <tr>
+          @if (receipt.songlist.showQuantity) {
+          <td style="text-align: right; padding-right: 20px; padding-left: 4px">{{ track.order }}</td>
+          <td>{{ track.title }}</td>
+          } @else {
+          <td style="padding-left: 4px">{{ track.title }}</td>
+          }
+          <td style="text-align: right; padding-right: 4px">{{ track.length }}</td>
+        </tr>
         }
-        <td style="text-align: right; padding-right: 4px" class="length">
-          {{ receipt.songlist.tracks.length }}
-        </td>
-      </tr>
-      <tr class="total-counts-end">
-        @if (receipt.songlist.showQuantity) {
-        <td style="padding-left: 4px" class="begin" colspan="2">{{ labels?.total }}</td>
-        } @if (!receipt.songlist.showQuantity) {
-        <td style="padding-left: 4px" class="begin">{{ labels?.total }}</td>
+        <tr class="total-counts">
+          @if (receipt.songlist.showQuantity) {
+          <td style="padding-left: 4px" class="begin" colspan="2">{{ labels?.itemcount }}</td>
+          } @if (!receipt.songlist.showQuantity) {
+          <td style="padding-left: 4px" class="begin">{{ labels?.itemcount }}</td>
+          }
+          <td style="text-align: right; padding-right: 4px" class="length">
+            {{ receipt.songlist.tracks.length }}
+          </td>
+        </tr>
+        <tr class="total-counts-end">
+          @if (receipt.songlist.showQuantity) {
+          <td style="padding-left: 4px" class="begin" colspan="2">{{ labels?.total }}</td>
+          } @if (!receipt.songlist.showQuantity) {
+          <td style="padding-left: 4px" class="begin">{{ labels?.total }}</td>
+          }
+          <td style="text-align: right; padding-right: 4px" class="length">
+            {{ receipt.songlist.total }}
+          </td>
+        </tr>
+      </table>
+    </main>
+    <footer>
+      @if (receipt.mode === 'ALBUM') {
+      @if (receipt.meta.date) {
+      <p class="date">{{ labels?.date }}: {{ receipt.meta.date }}</p>
+      }
+      }
+      @if (receipt.meta.cardnumber) {
+      <p class="date">{{ labels?.cardnumber }}: {{ receipt.meta.cardnumber }}</p>
+      } @if (receipt.meta.cardholder) {
+      <p class="date">{{ labels?.cardholder }}: {{ receipt.meta.cardholder }}</p>
+      } @if (receipt.meta.issuer) {
+      <p class="date">{{ labels?.issuer }}: {{ receipt.meta.issuer }}</p>
+      }
+      <div style="margin-top: 2rem; text-align: center; font-size: 90%">
+        @if (receipt.meta.text) {
+        <p>
+          {{ receipt.meta.text}}
+        </p>
         }
-        <td style="text-align: right; padding-right: 4px" class="length">
-          {{ receipt.songlist.total }}
-        </td>
-      </tr>
-    </table>
-  </main>
-  <footer>
-    @if (receipt.mode === 'ALBUM') {
-    @if (receipt.meta.date) {
-    <p class="date">{{ labels?.date }}: {{ receipt.meta.date }}</p>
-    }
-    }
-    @if (receipt.meta.cardnumber) {
-    <p class="date">{{ labels?.cardnumber }}: {{ receipt.meta.cardnumber }}</p>
-    } @if (receipt.meta.cardholder) {
-    <p class="date">{{ labels?.cardholder }}: {{ receipt.meta.cardholder }}</p>
-    } @if (receipt.meta.issuer) {
-    <p class="date">{{ labels?.issuer }}: {{ receipt.meta.issuer }}</p>
-    }
-    <div style="margin-top: 2rem; text-align: center; font-size: 90%">
-      @if (receipt.meta.text) {
-      <p>
-        {{ receipt.meta.text}}
-      </p>
-      }
-      @if (receipt.meta.text2) {
-      <p>
-        {{ receipt.meta.text2 }}
-      </p>
-      }
-      <img class="barcode" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOgAAABQAQMAAAAp/qsjAAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAADtJREFUSMdj+GZgyHjC3pzR8MCJcwaGPzn4zD4y/mQ78NHy/Dl+81HZUdlR2VHZUdlR2VHZUdlRWVJlAdxw6M70MDTkAAAAAElFTkSuQmCC" />
-      @if (receipt.artist.claim) {
-      <p>
-        {{ receipt.artist.claim }}
-      </p>
-      }
-      @if (receipt.artist.claim2) {
-      <p>
-        {{ receipt.artist.claim2 }}
-      </p>
-      }
-    </div>
-  </footer>
-</div>
+        @if (receipt.meta.text2) {
+        <p>
+          {{ receipt.meta.text2 }}
+        </p>
+        }
+        <img class="barcode" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOgAAABQAQMAAAAp/qsjAAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAADtJREFUSMdj+GZgyHjC3pzR8MCJcwaGPzn4zD4y/mQ78NHy/Dl+81HZUdlR2VHZUdlR2VHZUdlRWVJlAdxw6M70MDTkAAAAAElFTkSuQmCC" />
+        @if (receipt.artist.claim) {
+        <p>
+          {{ receipt.artist.claim }}
+        </p>
+        }
+        @if (receipt.artist.claim2) {
+        <p>
+          {{ receipt.artist.claim2 }}
+        </p>
+        }
+      </div>
+    </footer>
+  </div>
 </div>
