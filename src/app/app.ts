@@ -21,7 +21,7 @@ export class App {
     cardholder: 'cardholder',
     issuer: 'issuer',
     date: 'date',
-    venue: 'venue',
+    venue: 'register',
     itemcount: 'item count',
     total: 'total',
   };
