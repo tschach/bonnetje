@@ -25,7 +25,8 @@ export class BonPreview {
     const styleToCssClass = new Map<string, string>([
       ['CRUMPLED', 'crumbled'],
       ['PLAIN', 'plain'],
-      ['FADED', 'faded']
+      ['FADED', 'faded'],
+      ['TRANSPARENT', 'transparent']
     ]);
 
     this.seconds = 0;
