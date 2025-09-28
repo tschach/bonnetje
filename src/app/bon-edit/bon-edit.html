@@ -19,7 +19,10 @@
       <div class="form-group"><label for="concertfestival" class="form">Festival</label><input type="text" class="form" id="concertfestival" [(ngModel)]="receipt.concert.festival" name="concertfestival" /></div>
       }
       <div class="form-group"><label for="artistname" class="form">Artist</label><input type="text" class="form" id="artistname" [(ngModel)]="receipt.artist.name" name="artistname" /></div>
-      <div class="form-group"><label for="logo" class="form">Logo image</label><input type="file" class="form" id="artistlogo" [(ngModel)]="receipt.artist.logo" name="artistlogo" (change)="logoToBase64($event)" /></div>
+      <div class="form-group">
+        <label for="logo" class="form">Logo image (<a href="#" (click)="receipt.artist.logo = '';receipt.artist.logodata = '';">clear logo image</a>)</label><input type="file" class="form" id="artistlogo" [(ngModel)]="receipt.artist.logo" name="artistlogo" (change)="logoToBase64($event)" />
+
+      </div>
       <div><label for="metadate" class="form">Date</label><input type="text" class="form" id="metadate" [(ngModel)]="receipt.meta.date" name="metadate" /></div>
       <div><label for="cardnumber" class="form">Credit card</label><input type="text" class="form" id="cardnumber" [(ngModel)]="receipt.meta.cardnumber" name="cardnumber" /></div>
       <div><label for="cardholder" class="form">Credit card holder</label><input type="text" class="form" id="cardholder" [(ngModel)]="receipt.meta.cardholder" name="cardholder" /></div>
