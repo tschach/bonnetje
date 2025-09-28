@@ -38,13 +38,21 @@
         <input type="text" class="form" id="artistclaim2" [(ngModel)]="receipt.artist.claim2" name="artistclaim2" />
       </div>
       <div style="display: flex; flex-direction: row">
-        <div style="flex-basis: 50%">
+        <div style="flex-basis: 33.33%">
           <div><label class="form">Paper style</label></div>
-          <div><input type="radio" value="CRUMPLED" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" /><label class="form">crumpled</label></div>
-          <div><input type="radio" value="PLAIN" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" /><label class="form">plain</label></div>
-          <div><input type="radio" value="FADED" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" /><label class="form">faded</label></div>
+          <div><label class="form"><input type="radio" value="CRUMPLED" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" />crumpled</label></div>
+          <div><label class="form"><input type="radio" value="PLAIN" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" />plain</label></div>
+          <div><label class="form"><input type="radio" value="FADED" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" />faded</label></div>
+          <div><label class="form"><input type="radio" value="TRANSPARENT" [(ngModel)]="receipt.meta.style" name="receiptstyle" class="form" />transparent background (for printing and editing)</label></div>
         </div>
-        <div style="flex-basis: 50%">
+        <div style="flex-basis: 33.33%">
+          <div><label class="form">Font style</label></div>
+          <div><label class="form"><input type="radio" value="openinghours" [(ngModel)]="receipt.meta.font" name="fontstyle" class="form" />Opening hours</label></div>
+          <div><label class="form"><input type="radio" value="hydrogen" [(ngModel)]="receipt.meta.font" name="fontstyle" class="form" />Hydrogen</label></div>
+          <!-- <div><input type="radio" value="merchantcopy" [(ngModel)]="receipt.meta.font" name="fontstyle" class="form" /><label class="form">Merchant Copy</label></div> -->
+          <!-- <div><input type="radio" value="bitmatrix" [(ngModel)]="receipt.meta.font" name="fontstyle" class="form" /><label class="form">Bit Matrix</label></div> -->
+        </div>
+        <div style="flex-basis: 33.33%">
           <div><label class="form">Tracklist style</label></div>
           <div class="form-group"><input type="checkbox" class="form" id="songlistheader" [(ngModel)]="receipt.songlist.showHeader" name="songlistheader" /><label for="songlistheader" class="form">Show song list header?</label></div>
           <div class="form-group"><input type="checkbox" class="form" id="songlistquantity" [(ngModel)]="receipt.songlist.showQuantity" name="songlistquantity" /><label for="songlistquantity" class="form">Show track number?</label></div>

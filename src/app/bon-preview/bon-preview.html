@@ -35,13 +35,13 @@
     <main>
       @if (receipt.mode === 'CONCERT') {
       @if (receipt.meta.date) {
-      <div style="display:flex;flex-direction: row;justify-content: space-between;">
+      <div style="display:flex;flex-direction: row;justify-content: space-between;margin-bottom:.25rem;">
         <div>{{ labels?.date }}</div>
         <div> {{ receipt.meta.date }} </div>
       </div>
       }
       @if (receipt.concert.venue) {
-      <div style="display:flex;flex-direction: row;justify-content: space-between;">
+      <div style="display:flex;flex-direction: row;justify-content: space-between;margin-bottom:.25rem;">
         <div>{{ labels?.venue }}</div>
         <div> {{ receipt.concert.venue }} </div>
       </div>

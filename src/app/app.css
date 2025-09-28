@@ -38,7 +38,7 @@
   }
 
   label.form {
-    display: inline-block;
+    display: inline;
     margin-bottom: 1px;
     font-weight: bold;
     font-size: 0.9rem;
