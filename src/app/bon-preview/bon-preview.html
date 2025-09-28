@@ -1,5 +1,5 @@
 <div class="receiptContainer">
-  <div id="TheReceipt" class="{{ styleCssClass }}">
+  <div id="TheReceipt" class="{{ receipt.meta.font }} {{ styleCssClass }}">
     @if (receipt.mode === 'ALBUM') {
     <header>
       @if (receipt.artist.logodata) { <img src="{{ receipt.artist.logodata }}" /> } @if

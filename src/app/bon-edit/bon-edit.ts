@@ -14,7 +14,7 @@ export class BonEdit {
 
   @Input() receipt: Receipt = {
     mode: '',
-    meta: { date: '', cardnumber: '', cardholder: '', issuer: '', style: '' , text: '', text2: ''},
+    meta: { date: '', cardnumber: '', cardholder: '', issuer: '', style: '', font: '' , text: '', text2: ''},
     artist: { name: '', logo: '', logodata: '', claim: '', claim2: ''  },
     concert: { city: '', country: '', venue: '', festival: '', tour: '' },
     songlist: { title: '', showHeader: true, showQuantity: true, total: '', tracks: [] },

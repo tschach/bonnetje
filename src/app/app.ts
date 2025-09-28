@@ -33,6 +33,7 @@ export class App {
       cardholder: '',
       issuer: '',
       style: 'PLAIN',
+      font: 'openinghours',
       text: '',
       text2: '',
     },
@@ -176,6 +177,7 @@ export class App {
           cardholder: 'S.O.A.D.',
           issuer: 'American / Columbia',
           style: 'FADED',
+          font: 'openinghours',
         },
         artist: {
           name: '',
@@ -365,6 +367,7 @@ export class App {
 
   fixOldFormats() {
     this.receipt.mode = this.receipt.mode || 'ALBUM';
+    this.receipt.meta.font = this.receipt.meta.font || 'hydrogen';
   }
 }
 
@@ -396,6 +399,7 @@ export interface Meta {
   cardholder: string;
   issuer: string;
   style: string;
+  font: string;
   text: string;
   text2: string;
 }
