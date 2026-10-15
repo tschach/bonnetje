@@ -401,7 +401,7 @@ export class App {
 
   downloadLargeReceipt() {
     var oldReceiptWidth = document.documentElement.style.getPropertyValue('--receipt-width');
-    document.documentElement.style.setProperty('--receipt-width', '1800px');
+    document.documentElement.style.setProperty('--receipt-width', '2880px');
     let imageName =
       (this.receipt.artist.name ? this.receipt.artist.name.replace(/\s/g, '-') + '-' : '') +
       (this.receipt.songlist.title ? this.receipt.songlist.title.replace(/\s/g, '-') + '-' : '') +
@@ -409,8 +409,9 @@ export class App {
       new Date().toJSON().slice(0, -5).replace('T', '-').replaceAll(':', '') +
       '.png';
     DomToImage.toBlob(document.getElementById('TheReceipt')).then(function (blob: any) {
-      SaveAs(blob, imageName);
-      document.documentElement.style.setProperty('--receipt-width', oldReceiptWidth);
+      SaveAs(blob, imageName); 
+      setTimeout(() => document.documentElement.style.setProperty('--receipt-width', oldReceiptWidth), 250);
+      ;
     });
   }
 

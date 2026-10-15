@@ -35,13 +35,13 @@
     <main>
       @if (receipt.mode === 'CONCERT') {
       @if (receipt.meta.date) {
-      <div style="display:flex;flex-direction: row;justify-content: space-between;margin-bottom:.25rem;">
+      <div style="display:flex;flex-direction: row;justify-content: space-between;margin-bottom:.25em;">
         <div>{{ labels?.date }}</div>
         <div> {{ receipt.meta.date }} </div>
       </div>
       }
       @if (receipt.concert.venue) {
-      <div style="display:flex;flex-direction: row;justify-content: space-between;margin-bottom:.25rem;">
+      <div style="display:flex;flex-direction: row;justify-content: space-between;margin-bottom:.25em;">
         <div>{{ labels?.venue }}</div>
         <div> {{ receipt.concert.venue }} </div>
       </div>
@@ -58,43 +58,43 @@
         @if (receipt.songlist.showHeader) {
         <thead>
           @if (receipt.songlist.showQuantity) {
-          <td style="text-align: right; padding-right: 20px; padding-left: 4px">
+          <td style="text-align: right; padding-right: 1em; padding-left: .2em">
             {{ labels?.tracknumber }}
           </td>
           <td>{{ labels?.tracktitle }}</td>
           } @else {
-          <td style="padding-left: 4px">{{ labels?.tracktitle }}</td>
+          <td style="padding-left: .2em">{{ labels?.tracktitle }}</td>
           }
-          <td style="text-align: right; padding-right: 4px">{{ labels?.tracklength }}</td>
+          <td style="text-align: right; padding-right: .2em">{{ labels?.tracklength }}</td>
         </thead>
         } @for (track of receipt.songlist.tracks; track track.order) {
         <tr>
           @if (receipt.songlist.showQuantity) {
-          <td style="text-align: right; padding-right: 20px; padding-left: 4px">{{ track.order }}</td>
+          <td style="text-align: right; padding-right: 1em; padding-left: .2em">{{ track.order }}</td>
           <td>{{ track.title }}</td>
           } @else {
-          <td style="padding-left: 4px">{{ track.title }}</td>
+          <td style="padding-left: .2em">{{ track.title }}</td>
           }
-          <td style="text-align: right; padding-right: 4px">{{ track.length }}</td>
+          <td style="text-align: right; padding-right: .2em">{{ track.length }}</td>
         </tr>
         }
         <tr class="total-counts">
           @if (receipt.songlist.showQuantity) {
-          <td style="padding-left: 4px" class="begin" colspan="2">{{ labels?.itemcount }}</td>
+          <td style="padding-left: .2em" class="begin" colspan="2">{{ labels?.itemcount }}</td>
           } @if (!receipt.songlist.showQuantity) {
-          <td style="padding-left: 4px" class="begin">{{ labels?.itemcount }}</td>
+          <td style="padding-left: .2em" class="begin">{{ labels?.itemcount }}</td>
           }
-          <td style="text-align: right; padding-right: 4px" class="length">
+          <td style="text-align: right; padding-right: .2em" class="length">
             {{ receipt.songlist.tracks.length }}
           </td>
         </tr>
         <tr class="total-counts-end">
           @if (receipt.songlist.showQuantity) {
-          <td style="padding-left: 4px" class="begin" colspan="2">{{ labels?.total }}</td>
+          <td style="padding-left: .2em" class="begin" colspan="2">{{ labels?.total }}</td>
           } @if (!receipt.songlist.showQuantity) {
-          <td style="padding-left: 4px" class="begin">{{ labels?.total }}</td>
+          <td style="padding-left: .2em" class="begin">{{ labels?.total }}</td>
           }
-          <td style="text-align: right; padding-right: 4px" class="length">
+          <td style="text-align: right; padding-right: .2em" class="length">
             {{ receipt.songlist.total }}
           </td>
         </tr>
@@ -113,7 +113,7 @@
       } @if (receipt.meta.issuer) {
       <p class="date">{{ labels?.issuer }}: {{ receipt.meta.issuer }}</p>
       }
-      <div style="margin-top: 2rem; text-align: center; font-size: 90%">
+      <div style="margin-top: 2em; text-align: center; font-size: 90%">
         @if (receipt.meta.text) {
         <p>
           {{ receipt.meta.text}}

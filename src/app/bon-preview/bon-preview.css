@@ -10,21 +10,21 @@
 }
 
 header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5em;
 }
 
 footer {
-  margin-top: 1rem;
+  margin-top: 1em;
 }
 
 p {
   margin: 0;
-  margin-bottom:.25rem;
+  margin-bottom:.25em;
 }
 
 .receiptContainer {
   width: var(--receipt-width);
-  margin: 1rem;
+  margin: 1em;
 }
 
 #TheReceipt {
@@ -48,7 +48,7 @@ p {
 #TheReceipt.faded {
   color: #000;
   background-color: rgb(247,244,228);
-  box-shadow: 0 0 3rem 0 inset #cba;
+  box-shadow: 0 0 3em 0 inset #cba;
   font-variation-settings: "HORZ" 20, "CHNK" 15, "SPED" 0;
 }
 
@@ -101,7 +101,7 @@ p {
 
 .receiptContainer header img {
   width: calc(var(--receipt-width) * 0.6);
-  margin: 0 auto .5rem auto;
+  margin: 0 auto .5em auto;
   display: block;
 }
 
@@ -135,29 +135,30 @@ p {
 table {
   font-weight: normal;
   border: none;
-  border-top: 2px dotted #666;
+  border-top: .15em dotted #666;
 }
 
 .total-counts {
-  border-top: 2px dotted #666;
+  border-top: .15em dotted #666;
 }
 .total-counts-end {
-  border-bottom: 2px dotted #666;
+  border-bottom: .15em dotted #666;
 }
 thead {
-  border-bottom: 2px dotted #666;
+  border-bottom: .15em dotted #666;
 }
 td {
-  padding: 2px 0;
+  padding: .15em 0;
   vertical-align: top;
 }
 
 .barcode {
-  margin-top: .5rem;
+  margin-top: .5em;
+  width: 72%;
 }
 
 @media (min-width: 1024px) {
   .receiptContainer {
-    margin: 1rem auto 1rem 0
+    margin: 1em auto 1em 0
   }
 }

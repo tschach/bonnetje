@@ -1,5 +1,5 @@
 <div class="topnote">
-  New here? Have a look at the <a href="#help">help section</a>.<br/>
+  New here? Have a look at the <a href="#help">help section</a>.<br />
   (speaking of new, you can now select between fonts and download the receipt with a transparent background)
 </div>
 <header class="pageHeader" id="top">
@@ -24,7 +24,7 @@
         load data
       </label>
       <button (click)="downloadReceipt()" class="form">download image</button>
-      <!-- <button (click)="downloadLargeReceipt()" class="form">download large image</button> -->
+      <button (click)="downloadLargeReceipt()" class="form">download large image</button>
       <a href="#TheReceipt" class="form default">👇 see receipt</a>
     </div>
   </div>
@@ -45,7 +45,8 @@
       <input type="file" (change)="importData($event)" hidden />
       load data
     </label>
-    <button (click)="downloadReceipt()" class="form">download receipt</button>
+    <button (click)="downloadReceipt()" class="form">download image</button>
+    <button (click)="downloadLargeReceipt()" class="form">download large image</button>
     <a href="#top" class="form default">☝️ to the top</a>
   </div>
 </main>
